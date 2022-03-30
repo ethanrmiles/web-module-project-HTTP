@@ -36,9 +36,10 @@ const EditMovieForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+	console.log('save pressed!')
         axios.put(`http://localhost:9000/api/movies/${id}`, movie)
             .then(res=>{
-                setMovies(res.data);
+                setMovie(res.data);
                 push(`/movies/${movie.id}`);
 			})
 			.catch(err=>{
